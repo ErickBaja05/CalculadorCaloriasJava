@@ -11,12 +11,16 @@ public class Persona {
     private String nivelExperiencia;  // PRINCIPIANTE , INTERMEDIO , AVANZADO
     private double caloriasGanarMusc;
     private double caloriasPerderGrasa;
-    private double gramosProteina;
-    private double gramosGrasa;
-    private double gramosCarbohidratos;
+    private double gramosProteinaGanarMusc;
+    private double gramosGrasaGanarMusc;
+    private double gramosCarbohidratosGanarMusc;
+    private double gramosProteinaPerderGrasa;
+    private double gramosGrasaPerderGrasa;
+    private double gramosCarbohidratosPerderGrasa;
     private boolean gastoCaloricoLleno;
     private boolean ganarMasaLleno;
     private boolean perderGrasaLleno;
+
 
     public Persona(){
     }
@@ -30,9 +34,12 @@ public class Persona {
         this.nivelExperiencia = "";
         this.caloriasGanarMusc = 0;
         this.caloriasPerderGrasa = 0;
-        this.gramosProteina = 0;
-        this.gramosGrasa = 0;
-        this.gramosCarbohidratos = 0;
+        this.gramosProteinaGanarMusc = 0;
+        this.gramosGrasaGanarMusc = 0;
+        this.gramosCarbohidratosGanarMusc = 0;
+        this.gramosProteinaPerderGrasa = 0;
+        this.gramosGrasaPerderGrasa = 0;
+        this.gramosCarbohidratosPerderGrasa = 0;
         this.gastoCaloricoLleno = false;
         this.ganarMasaLleno = false;
         this.perderGrasaLleno = false;
