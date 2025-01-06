@@ -126,12 +126,21 @@ public class ControladorGastoCalorico {
         } catch (NullPointerException e) {
             msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n *Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
         }
-        if (validInput) {
-            p1.setGastoCalorico(p1);
-            calDiarias.setText(p1.caloriasToString());
-            p1.setGastoCaloricoLleno(true);
-            ManagerPersona.setPersona(p1);
+
+        try{
+            if (validInput) {
+                p1.setGastoCalorico(p1);
+                calDiarias.setText(p1.caloriasToString());
+                p1.setGastoCaloricoLleno(true);
+                ManagerPersona.setPersona(p1);
+            }
+        }catch (NumberFormatException e) {
+            msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n*Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
+        } catch (NullPointerException e) {
+            msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n *Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
         }
+
+
 
 
     }

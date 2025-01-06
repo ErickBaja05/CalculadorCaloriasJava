@@ -2,7 +2,7 @@ package caloriesApp;
 
 public class Persona {
     private String sexo;
-    private String nombre;
+    private String nombre = "Usuario";
     private double peso;
     private double altura;
     private double edad;
