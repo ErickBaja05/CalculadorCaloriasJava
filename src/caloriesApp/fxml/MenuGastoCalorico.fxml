@@ -11,74 +11,94 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="caloriesApp.controladores.ControladorGastoCalorico">
    <children>
-      <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TabPane fx:id="tabPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/menuCalculosStyle.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab text="Untitled Tab 1">
+          <Tab fx:id="gasto" closable="false" text="Gasto Calórico Diario">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane fx:id="backPaneGastCal" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text layoutX="294.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculadora de Calorías" wrappingWidth="212.376953125">
+                        <Pane fx:id="darkenPaneGasCal" layoutX="47.0" layoutY="449.0" prefHeight="571.0" prefWidth="800.0" styleClass="fondoDatos" stylesheets="@../css/menuCalculosStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Pane fx:id="datosPane" layoutX="41.0" layoutY="33.0" prefHeight="498.0" prefWidth="719.0" stylesheets="@../css/menuCalculosStyle.css">
+                           <children>
+                              <Button fx:id="calculo" layoutX="299.0" layoutY="294.0" mnemonicParsing="false" onAction="#eventoCalculo" prefHeight="30.0" prefWidth="121.0" stylesheets="@../css/menuCalculosStyle.css" text="Calcular" />
+                              <Pane layoutX="164.0" layoutY="347.0" prefHeight="123.0" prefWidth="391.0" styleClass="fondoDatos" stylesheets="@../css/menuCalculosStyle.css">
+                                 <children>
+                                    <Text layoutX="29.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La cantidad de calorías que su cuerpo consume diariamente es:" />
+                                    <Text layoutX="227.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calorías">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="calDiarias" layoutX="112.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" underline="true" wrappingWidth="98.13671875">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Text layoutX="294.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculadora de Calorías" wrappingWidth="212.376953125">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <Pane layoutX="22.0" layoutY="135.0" prefHeight="151.0" prefWidth="200.0">
+                        <Pane layoutX="44.0" layoutY="146.0" prefHeight="151.0" prefWidth="200.0">
                            <children>
-                              <Text layoutX="54.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Cuál es su sexo?" />
-                              <RadioButton fx:id="Masculino" layoutX="56.0" layoutY="59.0" mnemonicParsing="false" onAction="#escSexo" text="Masculino">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="SelSexo" />
-                                 </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="Femenino" layoutX="57.0" layoutY="95.0" mnemonicParsing="false" onAction="#escSexo" text="Femenino" toggleGroup="$SelSexo" />
+                              <Pane fx:id="fondoDatos" layoutX="10.0" layoutY="-11.0" prefHeight="170.0" prefWidth="690.0" styleClass="fondoDatos">
+                                 <children>
+                                    <Text layoutX="43.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Cuál es su sexo?" />
+                                    <RadioButton fx:id="Masculino" layoutX="43.0" layoutY="49.0" mnemonicParsing="false" onAction="#escSexo" text="Hombre">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="SelSexo" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="Femenino" layoutX="43.0" layoutY="77.0" mnemonicParsing="false" onAction="#escSexo" text="Mujer" toggleGroup="$SelSexo" />
+                                 </children>
+                              </Pane>
                            </children>
                         </Pane>
-                        <Pane layoutX="222.0" layoutY="135.0" prefHeight="151.0" prefWidth="258.0">
+                        <Pane layoutX="247.0" layoutY="135.0" prefHeight="151.0" prefWidth="258.0">
                            <children>
-                              <Text layoutX="15.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese los datos para el cálculo" />
+                              <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese los datos para el cálculo" />
                               <TextField fx:id="txtPeso" layoutX="79.0" layoutY="37.0" promptText="Ejemplo: 51.4" />
                               <TextField fx:id="txtAltura" layoutX="79.0" layoutY="76.0" promptText="Ejemplo: 173" />
                               <TextField fx:id="txtEdad" layoutX="79.0" layoutY="112.0" promptText="Ingrese su edad" />
-                              <Text layoutX="21.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peso(kg)" />
+                              <Text layoutX="14.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peso(kg)" />
                               <Text layoutX="14.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Altura (cm)" />
                               <Text layoutX="14.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edad" />
                            </children>
                         </Pane>
-                        <Pane layoutX="514.0" layoutY="135.0" prefHeight="151.0" prefWidth="216.0">
+                        <Pane layoutX="514.0" layoutY="135.0" prefHeight="151.0" prefWidth="237.0">
                            <children>
-                              <Text layoutX="6.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Cuál es su nivel de actividad física?" />
-                              <RadioButton fx:id="sedentario" layoutX="20.0" layoutY="46.0" mnemonicParsing="false" onAction="#escAct" text="Sedentario">
+                              <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿Cuál es su nivel de actividad física?" />
+                              <RadioButton fx:id="sedentario" layoutX="15.0" layoutY="44.0" mnemonicParsing="false" onAction="#escAct" prefHeight="17.0" prefWidth="152.0" text="Sedentario">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="SelAct" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="ligero" layoutX="20.0" layoutY="67.0" mnemonicParsing="false" onAction="#escAct" text="Actividad ligera" toggleGroup="$SelAct" />
-                              <RadioButton fx:id="moderado" layoutX="18.0" layoutY="91.0" mnemonicParsing="false" onAction="#escAct" text="Actividad moderada" toggleGroup="$SelAct" />
-                              <RadioButton fx:id="intenso" layoutX="15.0" layoutY="120.0" mnemonicParsing="false" onAction="#escAct" text="Actividad Intensa" toggleGroup="$SelAct" />
+                              <RadioButton fx:id="ligero" layoutX="15.0" layoutY="67.0" mnemonicParsing="false" onAction="#escAct" prefHeight="17.0" prefWidth="148.0" text="Actividad ligera" toggleGroup="$SelAct" />
+                              <RadioButton fx:id="moderado" layoutX="15.0" layoutY="90.0" mnemonicParsing="false" onAction="#escAct" text="Actividad moderada" toggleGroup="$SelAct" />
+                              <RadioButton fx:id="intenso" layoutX="15.0" layoutY="114.0" mnemonicParsing="false" onAction="#escAct" text="Actividad Intensa" toggleGroup="$SelAct" />
                            </children>
                         </Pane>
-                        <Pane layoutX="182.0" layoutY="297.0" prefHeight="200.0" prefWidth="387.0">
-                           <children>
-                              <Text layoutX="27.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="La cantidad de calorías que su cuerpo consume diariamente es:" />
-                              <Text layoutX="250.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calorías" />
-                              <Text fx:id="calDiarias" layoutX="127.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="98.13671875" />
-                              <Button fx:id="calculo" layoutX="165.0" layoutY="50.0" mnemonicParsing="false" onAction="#eventoCalculo" text="Calcular" />
-                           </children>
-                        </Pane>
-                        <Text layoutX="260.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" wrappingWidth="71.13671875" />
-                        <TextField fx:id="textNombre" layoutX="326.0" layoutY="80.0" promptText="Ingrese su nombre" />
+                        <Text layoutX="268.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" wrappingWidth="71.13671875" />
+                        <TextField fx:id="textNombre" layoutX="334.0" layoutY="81.0" promptText="Ingrese su nombre" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
+          <Tab text="Ganar Masa Muscular">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" fx:id="MenuGanarMusculo"/>
           </Tab>
+            <Tab text="Perder Grasa">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" fx:id="MenuPerderGrasa" />
+            </Tab>
+            <Tab text="Resumen General">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" fx:id="InformacionResumida"/>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

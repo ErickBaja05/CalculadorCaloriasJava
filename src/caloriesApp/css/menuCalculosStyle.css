@@ -1,0 +1,53 @@
+/* Modificaciones esteticas a las pestanias*/
+.tab-pane {
+    -fx-background-color: #ECEFF1; /* Light grey background for the entire TabPane */
+    /* No border */
+}
+.tab-pane .tab-label {
+    -fx-font-size: 14px; /* Font size for tab labels */
+}
+.tab-pane .tab {
+    -fx-background-color: #ECEFF1; /* Light grey background for tabs */
+    -fx-padding: 3 5; /* Add padding to tabs */
+    -fx-text-fill: #546E7A; /* Grey text */
+    -fx-border-radius: 3px; /* Rounded tabs */
+}
+.tab-pane .tab:selected {
+    -fx-background-color: #c9c2c1; /* Cyan for the selected tab */
+    -fx-text-fill: white; /* White text for the selected tab */
+    -fx-border-radius: 3px; /* Keep tabs rounded */
+    -fx-focus-color: transparent; /* Removes the blue border */
+    -fx-faint-focus-color: transparent; /* Removes the faint border */
+}
+
+.tab-pane .tab-content-area {
+    -fx-background-color: white; /* White background for tab content */
+    /* Padding for the content inside the tabs */
+}
+/* Modificaciones esteticas a la pestania Gasto Calorico*/
+#backPaneGastCal{
+    -fx-background-image: url("https://greencity.com.pa/wp-content/uploads/2017/10/maxresdefault.jpg");
+    -fx-background-size: cover;
+}
+#darkenPaneGasCal{
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+}
+#datosPane{
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-background-position: center;
+}
+.fondoDatos {
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-background-position: center;
+    -fx-background-radius: 5;
+}
+
+#calculo{
+    -fx-background-color: rgba(56, 103, 214);
+    -fx-text-fill: white;
+}
+/* Modificaciones esteticas a la pestania ------*/
+
+/* Modificaciones esteticas a la pestania ------*/
+/* Modificaciones esteticas a la pestania ------*/
+

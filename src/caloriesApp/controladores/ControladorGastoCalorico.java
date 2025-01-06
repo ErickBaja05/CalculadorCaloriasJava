@@ -1,15 +1,20 @@
 package caloriesApp.controladores;
 
 import caloriesApp.App;
+import caloriesApp.ManagerPersona;
 import caloriesApp.Persona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import Alert.Message;
+
+import java.io.IOException;
 
 
 public class ControladorGastoCalorico {
@@ -18,6 +23,10 @@ public class ControladorGastoCalorico {
     public void asociarApp(App app){
         this.aplicacionAsociada = app;
     }
+    //Se crea una persona para almacenar todos los datos necesarios para los distintos calculos
+    Persona p1 = new Persona();
+    //Seccion de Gasto calorico diario
+
     //Opciones de sexo
     @FXML
     private RadioButton Femenino;
@@ -62,6 +71,13 @@ public class ControladorGastoCalorico {
     private TextField txtPeso;
     @FXML
     private Text calDiarias;
+
+    @FXML
+    private AnchorPane MenuGanarMusculo;
+    @FXML
+    private AnchorPane MenuPerderGrasa;
+    @FXML
+    private AnchorPane InformacionResumida;
     @FXML
     void escSexo(ActionEvent event) {
 
@@ -80,14 +96,13 @@ public class ControladorGastoCalorico {
         //Mensaje en caso de error
         Message msg = new Message();
         //Al presionar el boton de calculo se generará una persona y se invocará el setter de calorías
-        Persona p1 = new Persona();
         boolean validInput = false;
         try{
             //Configurando el sexo de la persona
             if (Masculino.isSelected()) {
-                p1.setSexo("masculino");
+                p1.setSexo("hombre");
             } else if (Femenino.isSelected()) {
-                p1.setSexo("femenino");
+                p1.setSexo("mujer");
             }
             //Configurando el nombre peso, altura y edad de la persona
             p1.setNombre(textNombre.getText());
@@ -107,17 +122,43 @@ public class ControladorGastoCalorico {
             }
             validInput = true;
         } catch (NumberFormatException e) {
-            msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n*Utilizar el punto para decimales\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
+            msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n*Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
         } catch (NullPointerException e) {
-            msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n *Utilizar el punto para decimales\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
+            msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n *Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
         }
         if (validInput) {
             p1.setGastoCalorico(p1);
             calDiarias.setText(p1.caloriasToString());
+            p1.setGastoCaloricoLleno(true);
+            ManagerPersona.setPersona(p1);
         }
 
 
     }
+
+    @FXML
+    public void initialize() throws IOException {
+        try{
+            FXMLLoader cargador1 = new FXMLLoader(getClass().getResource("/caloriesApp/fxml/MenuGanarMusculo.fxml"));
+            AnchorPane contenidoGanarMusculo = cargador1.load();
+            MenuGanarMusculo.getChildren().setAll(contenidoGanarMusculo);
+
+            FXMLLoader cargador2 = new FXMLLoader(getClass().getResource("/caloriesApp/fxml/MenuPerderGrasa.fxml"));
+            AnchorPane contenidoPerderGrasa = cargador2.load();
+            MenuPerderGrasa.getChildren().setAll(contenidoPerderGrasa);
+
+            FXMLLoader cargador3 = new FXMLLoader(getClass().getResource("/caloriesApp/fxml/InformacionResumida.fxml"));
+            AnchorPane contenidoResumen = cargador3.load();
+            InformacionResumida.getChildren().setAll(contenidoResumen);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+
 
 
 }
