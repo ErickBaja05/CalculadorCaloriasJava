@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="caloriesApp.controladores.ControladorInformacionRes">
+   <children>
+      <Button fx:id="botonFranciel" layoutX="191.0" layoutY="121.0" mnemonicParsing="false" onAction="#eventButton" prefHeight="139.0" prefWidth="189.0" text="YO SOY EL BOTON DE FRANCIEL" />
+   </children>
+</AnchorPane>

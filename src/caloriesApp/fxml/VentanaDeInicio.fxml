@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="contenedorPrincipal" prefHeight="453.0" prefWidth="753.0" styleClass="contenedorPrincipal" stylesheets="@../css/estilos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="caloriesApp.controladores.ControladorMenuInicio">
+<AnchorPane fx:id="contenedorPrincipal" prefHeight="453.0" prefWidth="753.0" styleClass="contenedorPrincipal" stylesheets="@../css/menuPrincipalStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="caloriesApp.controladores.ControladorMenuInicio">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="73.0" layoutY="43.0" prefHeight="103.0" prefWidth="630.0" styleClass="labelTitulo" text="CALCULADORA DE CALORIAS" />
       <Button fx:id="botonComenzar" layoutX="409.0" layoutY="280.0" mnemonicParsing="false" onAction="#comenzarPrograma" prefHeight="46.0" prefWidth="134.0" styleClass="botonComenzar" text="COMENZAR" />

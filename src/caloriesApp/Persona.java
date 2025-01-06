@@ -46,7 +46,7 @@ public class Persona {
     }
 
     public String getSexo() {
-        return sexo;
+        return this.sexo;
     }
 
     public void setSexo(String sexo) {
@@ -54,7 +54,7 @@ public class Persona {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public void setNombre(String nombre) {
@@ -62,7 +62,7 @@ public class Persona {
     }
 
     public double getPeso() {
-        return peso;
+        return this.peso;
     }
 
     public void setPeso(double peso) {
@@ -70,7 +70,7 @@ public class Persona {
     }
 
     public double getAltura() {
-        return altura;
+        return this.altura;
     }
 
     public void setAltura(double altura) {
@@ -78,7 +78,7 @@ public class Persona {
     }
 
     public double getEdad() {
-        return edad;
+        return this.edad;
     }
 
     public void setEdad(double edad) {
@@ -86,35 +86,135 @@ public class Persona {
     }
 
     public String getActividadFisica() {
-        return actividadFisica;
+        return this.actividadFisica;
     }
 
     public void setActividadFisica(String actividadFisica) {
         this.actividadFisica = actividadFisica;
     }
 
+    public void setGastoCalorico(double gastoCalorico) {
+        this.gastoCalorico = gastoCalorico;
+    }
+
+    public String getNivelExperiencia() {
+        return nivelExperiencia;
+    }
+
+    public void setNivelExperiencia(String nivelExperiencia) {
+        this.nivelExperiencia = nivelExperiencia;
+    }
+
+    public double getCaloriasGanarMusc() {
+        return caloriasGanarMusc;
+    }
+
+    public void setCaloriasGanarMusc(double caloriasGanarMusc) {
+        this.caloriasGanarMusc = caloriasGanarMusc;
+    }
+
+    public double getCaloriasPerderGrasa() {
+        return caloriasPerderGrasa;
+    }
+
+    public void setCaloriasPerderGrasa(double caloriasPerderGrasa) {
+        this.caloriasPerderGrasa = caloriasPerderGrasa;
+    }
+
+    public double getGramosProteinaGanarMusc() {
+        return gramosProteinaGanarMusc;
+    }
+
+    public void setGramosProteinaGanarMusc(double gramosProteinaGanarMusc) {
+        this.gramosProteinaGanarMusc = gramosProteinaGanarMusc;
+    }
+
+    public double getGramosGrasaGanarMusc() {
+        return gramosGrasaGanarMusc;
+    }
+
+    public void setGramosGrasaGanarMusc(double gramosGrasaGanarMusc) {
+        this.gramosGrasaGanarMusc = gramosGrasaGanarMusc;
+    }
+
+    public double getGramosCarbohidratosGanarMusc() {
+        return gramosCarbohidratosGanarMusc;
+    }
+
+    public void setGramosCarbohidratosGanarMusc(double gramosCarbohidratosGanarMusc) {
+        this.gramosCarbohidratosGanarMusc = gramosCarbohidratosGanarMusc;
+    }
+
+    public double getGramosProteinaPerderGrasa() {
+        return gramosProteinaPerderGrasa;
+    }
+
+    public void setGramosProteinaPerderGrasa(double gramosProteinaPerderGrasa) {
+        this.gramosProteinaPerderGrasa = gramosProteinaPerderGrasa;
+    }
+
+    public double getGramosGrasaPerderGrasa() {
+        return gramosGrasaPerderGrasa;
+    }
+
+    public void setGramosGrasaPerderGrasa(double gramosGrasaPerderGrasa) {
+        this.gramosGrasaPerderGrasa = gramosGrasaPerderGrasa;
+    }
+
+    public double getGramosCarbohidratosPerderGrasa() {
+        return gramosCarbohidratosPerderGrasa;
+    }
+
+    public void setGramosCarbohidratosPerderGrasa(double gramosCarbohidratosPerderGrasa) {
+        this.gramosCarbohidratosPerderGrasa = gramosCarbohidratosPerderGrasa;
+    }
+
+    public boolean isGastoCaloricoLleno() {
+        return gastoCaloricoLleno;
+    }
+
+    public void setGastoCaloricoLleno(boolean gastoCaloricoLleno) {
+        this.gastoCaloricoLleno = gastoCaloricoLleno;
+    }
+
+    public boolean isGanarMasaLleno() {
+        return ganarMasaLleno;
+    }
+
+    public void setGanarMasaLleno(boolean ganarMasaLleno) {
+        this.ganarMasaLleno = ganarMasaLleno;
+    }
+
+    public boolean isPerderGrasaLleno() {
+        return perderGrasaLleno;
+    }
+
+    public void setPerderGrasaLleno(boolean perderGrasaLleno) {
+        this.perderGrasaLleno = perderGrasaLleno;
+    }
+
     public double getGastoCalorico() {
-        return gastoCalorico;
+        return this.gastoCalorico;
     }
     public String caloriasToString(){
-        return String.format("%.2f", gastoCalorico);
+        return String.format("%.2f", this.gastoCalorico);
 
     }
 
     public void setGastoCalorico(Persona persona) {
         //Calculo general de las gastoCalorico que consume en promedio una persona
-        if (persona.sexo.equals("masculino")) {
-            gastoCalorico = 13.707 * (persona.peso) + 492.3 * (persona.altura/100) - 6.673 * (persona.edad) + 77.607005;
-        } else if (persona.sexo.equals("femenino")) {
-            gastoCalorico = 9.740 * (persona.peso) + 172.9 * (persona.altura/100) - 4.737 * (persona.edad) + 667.051005;
+        if (persona.getSexo().equals("hombre")) {
+            this.gastoCalorico = 13.707 * (persona.getPeso()) + 492.3 * (persona.getAltura()/100) - 6.673 * (persona.getEdad()) + 77.607005;
+        } else if (persona.sexo.equals("mujer")) {
+            this.gastoCalorico = 9.740 * (persona.getPeso()) + 172.9 * (persona.getAltura()/100) - 4.737 * (persona.getEdad()) + 667.051005;
         }
 
         //Modifcando la cantidad de gastoCalorico en funcion de la actividad fisica, para obtener el valor real
         switch (persona.actividadFisica) {
-            case "sedentario" -> gastoCalorico = gastoCalorico * 1.375;
-            case "ligera" -> gastoCalorico = gastoCalorico * 1.56;
-            case "moderada" -> gastoCalorico = gastoCalorico * 1.64;
-            case "intensa" -> gastoCalorico = gastoCalorico * 1.82;
+            case "sedentario" -> this.gastoCalorico = this.gastoCalorico * 1.375;
+            case "ligera" -> this.gastoCalorico = this.gastoCalorico * 1.56;
+            case "moderada" -> this.gastoCalorico = this.gastoCalorico * 1.64;
+            case "intensa" -> this.gastoCalorico = this.gastoCalorico * 1.82;
         }
     }
 }

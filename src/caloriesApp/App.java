@@ -25,6 +25,7 @@ public class App extends Application {
         Scene scene = new Scene(root);
         primaryStage.setTitle("Calories Counter");
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
