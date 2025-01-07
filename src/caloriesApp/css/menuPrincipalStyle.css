@@ -1,31 +1,41 @@
 .contenedorPrincipal{
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
     -fx-background-color: linear-gradient(to bottom, #ffffff, #D5E4CF);
     -fx-padding: 20px;
     -fx-alignment: center;
     -fx-spacing: 15px;
 }
 .labelTitulo{
-    -fx-font-size: 32px;
-    -fx-font-family: "Arial Black", sans-serif;
-    -fx-text-fill: #499C70;
+    -fx-font-size: 48px;
+    -fx-font-family: "Calibri", sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0.5, 0, 2);
     -fx-animation: fade-in 2s ease-out 0.5s forwards, move-down 2s ease-out 0.5s forwards;
-
 }
 .labelTexto{
-    -fx-font-size: 18px;
-    -fx-font-family: "Segoe UI", sans-serif;
-    -fx-text-fill: #333333;
+    -fx-font-size: 24px;
+    -fx-font-family: "Calibri", sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
     -fx-alignment: center; /* Center-align the text */
+    -fx-background-color: #DEE19A;
+    -fx-background-radius: 5;
     -fx-animation: fade-in 1.5s ease-out 0.8s forwards;
 
 }
+#labelTexto2{
+    -fx-background-radius: 0 0 5 5;
+}
 .botonComenzar{
     -fx-font-size: 16px;
-    -fx-font-family: "Verdana", sans-serif;
-    -fx-background-color: #499C70;
+    -fx-font-family: "Calibri", sans-serif;
+    -fx-font-weight: bold;
+    -fx-background-color: #DEE19A;
     -fx-background-radius: 5px;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 
 .botonComenzar:hover{
@@ -40,4 +50,10 @@
 .imagenMenu{
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 4);
     -fx-animation: fade-in 2s ease-out 1s forwards;
+}
+.backPane{
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+}
+#backPaneInset{
+    -fx-background-radius: 15px;
 }

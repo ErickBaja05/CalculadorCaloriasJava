@@ -16,7 +16,6 @@ import Alert.Message;
 
 import java.io.IOException;
 
-
 public class ControladorGastoCalorico {
     private App aplicacionAsociada;
 
@@ -25,9 +24,7 @@ public class ControladorGastoCalorico {
     }
     //Se crea una persona para almacenar todos los datos necesarios para los distintos calculos
     Persona p1 = new Persona();
-    //Seccion de Gasto calorico diario
-
-    //Opciones de sexo
+    //Elementos de la ventana
     @FXML
     private RadioButton Femenino;
 
@@ -35,12 +32,6 @@ public class ControladorGastoCalorico {
     private RadioButton Masculino;
 
     //Grupos de seleccion para sexo y actividad fisica
-    @FXML
-    private ToggleGroup SelAct;
-
-    @FXML
-    private ToggleGroup SelSexo;
-
     @FXML
     private Button calculo;
 
@@ -74,22 +65,12 @@ public class ControladorGastoCalorico {
 
     @FXML
     private AnchorPane MenuGanarMusculo;
+
     @FXML
     private AnchorPane MenuPerderGrasa;
+
     @FXML
     private AnchorPane InformacionResumida;
-    @FXML
-    void escSexo(ActionEvent event) {
-
-    }
-
-    @FXML
-    void escAct(ActionEvent event) {
-        if (sedentario.isSelected()) {
-            String actividadFisica = "sedentario";
-        }
-
-    }
 
     @FXML
     void eventoCalculo(ActionEvent event) {
@@ -127,6 +108,8 @@ public class ControladorGastoCalorico {
             msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n *Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
         }
 
+        //Si la información ingresada es válida entonces se asignará el gasto cálorico y se lo mostrará al usuario
+        //Posteriormente, se almacenaran todos los datos de la persona en la ManagerPersona
         try{
             if (validInput) {
                 p1.setGastoCalorico(p1);
@@ -139,14 +122,11 @@ public class ControladorGastoCalorico {
         } catch (NullPointerException e) {
             msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n *Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
         }
-
-
-
-
     }
 
     @FXML
     public void initialize() throws IOException {
+        //Se cargan todos los controladores necesarios para controlar el resto de pestañas
         try{
             FXMLLoader cargador1 = new FXMLLoader(getClass().getResource("/caloriesApp/fxml/MenuGanarMusculo.fxml"));
             AnchorPane contenidoGanarMusculo = cargador1.load();
@@ -162,8 +142,6 @@ public class ControladorGastoCalorico {
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
     }
 
 

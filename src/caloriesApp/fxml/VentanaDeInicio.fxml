@@ -5,16 +5,35 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="contenedorPrincipal" prefHeight="453.0" prefWidth="753.0" styleClass="contenedorPrincipal" stylesheets="@../css/menuPrincipalStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="caloriesApp.controladores.ControladorMenuInicio">
+<AnchorPane fx:id="contenedorPrincipal" prefHeight="455.0" prefWidth="763.0" styleClass="contenedorPrincipal" stylesheets="@../css/menuPrincipalStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="caloriesApp.controladores.ControladorMenuInicio">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="73.0" layoutY="43.0" prefHeight="103.0" prefWidth="630.0" styleClass="labelTitulo" text="CALCULADORA DE CALORIAS" />
-      <Button fx:id="botonComenzar" layoutX="409.0" layoutY="280.0" mnemonicParsing="false" onAction="#comenzarPrograma" prefHeight="46.0" prefWidth="134.0" styleClass="botonComenzar" text="COMENZAR" />
-      <Label alignment="CENTER" layoutX="106.0" layoutY="147.0" prefHeight="80.0" prefWidth="565.0" styleClass="labelTexto" text="LA MEJOR CALCULADORA PARA CUMPLIR CON TUS OBJETIVOS FISICOS EN ESTE 2025" textAlignment="CENTER" wrapText="true" />
-      <ImageView fitHeight="112.0" fitWidth="130.0" layoutX="208.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true" styleClass="imagenMenu">
-         <image>
-            <Image url="@../recursos/imagenes/ImagenGym.jpg" />
-         </image>
-      </ImageView>
+      <Pane layoutX="14.0" layoutY="8.0" prefHeight="453.0" prefWidth="753.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="459.0" fitWidth="768.0" layoutX="-25.0" layoutY="-23.0">
+               <image>
+                  <Image url="@../recursos/imagenes/FondoMenuBienvenida.jpeg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="-22.0" layoutY="-22.0" prefHeight="459.0" prefWidth="768.0" styleClass="backPane">
+               <children>
+                  <Pane id="backPaneInset" layoutX="78.0" layoutY="53.0" prefHeight="354.0" prefWidth="612.0" styleClass="backPane">
+                     <children>
+                        <Button fx:id="botonComenzar" layoutX="101.0" layoutY="265.0" mnemonicParsing="false" onAction="#comenzarPrograma" prefHeight="46.0" prefWidth="166.0" styleClass="botonComenzar" text="COMENZAR" />
+                        <ImageView fitHeight="200.0" fitWidth="186.0" layoutX="373.0" layoutY="111.0">
+                           <image>
+                              <Image url="@../recursos/imagenes/ImplementosEjercicio.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Label id="labelTexto2" alignment="CENTER" layoutX="159.0" layoutY="245.0" prefHeight="35.0" prefWidth="213.0" styleClass="labelTexto" text="EN ESTE 2025" textAlignment="CENTER" wrapText="true" />
+                  <Label alignment="CENTER" layoutX="96.0" layoutY="176.0" prefHeight="77.0" prefWidth="339.0" styleClass="labelTexto" text="LA MEJOR CALCULADORA PARA CUMPLIR CON TUS OBJETIVOS" textAlignment="CENTER" wrapText="true" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="73.0" layoutY="43.0" prefHeight="124.0" prefWidth="612.0" styleClass="labelTitulo" text="CALCULADORA DE CALORIAS" textFill="WHITE" />
    </children>
 </AnchorPane>
