@@ -1,7 +1,7 @@
 package caloriesApp;
 
 public class ManagerPersona {
-    public static Persona persona;
+    public static Persona persona = new Persona();
 
     public static Persona getPersona() {
         return persona;
