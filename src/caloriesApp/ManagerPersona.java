@@ -10,4 +10,8 @@ public class ManagerPersona {
     public static void setPersona(Persona persona) {
         ManagerPersona.persona = persona;
     }
+
+    public String valorToString(double valor){
+        return String.format("%.2f", valor);
+    }
 }
