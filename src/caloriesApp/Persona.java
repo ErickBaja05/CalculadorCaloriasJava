@@ -198,7 +198,10 @@ public class Persona {
     }
     public String caloriasToString(){
         return String.format("%.2f", this.gastoCalorico);
+    }
 
+    public String valorToString(double valor){
+        return String.format("%.2f", valor);
     }
 
     public void setGastoCalorico(Persona persona) {

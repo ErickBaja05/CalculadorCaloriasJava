@@ -6,10 +6,7 @@ import caloriesApp.Persona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import Alert.Message;
@@ -22,8 +19,7 @@ public class ControladorGastoCalorico {
     public void asociarApp(App app){
         this.aplicacionAsociada = app;
     }
-    //Se crea una persona para almacenar todos los datos necesarios para los distintos calculos
-    Persona p1 = new Persona();
+
     //Elementos de la ventana
     @FXML
     private RadioButton Femenino;
@@ -72,6 +68,11 @@ public class ControladorGastoCalorico {
     @FXML
     private AnchorPane InformacionResumida;
 
+
+
+
+
+    private ControladorGanarMusculo controladorMusculo;
     @FXML
     void eventoCalculo(ActionEvent event) {
         //Mensaje en caso de error
@@ -81,25 +82,25 @@ public class ControladorGastoCalorico {
         try{
             //Configurando el sexo de la persona
             if (Masculino.isSelected()) {
-                p1.setSexo("hombre");
+                ManagerPersona.getPersona().setSexo("hombre");
             } else if (Femenino.isSelected()) {
-                p1.setSexo("mujer");
+                ManagerPersona.getPersona().setSexo("mujer");
             }
             //Configurando el nombre peso, altura y edad de la persona
-            p1.setNombre(textNombre.getText());
-            p1.setPeso(Double.parseDouble(txtPeso.getText()));
-            p1.setAltura(Double.parseDouble(txtAltura.getText()));
-            p1.setEdad(Integer.parseInt(txtEdad.getText()));
+            ManagerPersona.getPersona().setNombre(textNombre.getText());
+            ManagerPersona.getPersona().setPeso(Double.parseDouble(txtPeso.getText()));
+            ManagerPersona.getPersona().setAltura(Double.parseDouble(txtAltura.getText()));
+            ManagerPersona.getPersona().setEdad(Integer.parseInt(txtEdad.getText()));
 
             //Configurando la nivel de actividad física de la persona
             if (sedentario.isSelected()) {
-                p1.setActividadFisica("sedentario");
+                ManagerPersona.getPersona().setActividadFisica("sedentario");
             } else if (ligero.isSelected()) {
-                p1.setActividadFisica("ligera");
+                ManagerPersona.getPersona().setActividadFisica("ligera");
             } else if (moderado.isSelected()) {
-                p1.setActividadFisica("moderada");
+                ManagerPersona.getPersona().setActividadFisica("moderada");
             } else if (intenso.isSelected()) {
-                p1.setActividadFisica("intensa");
+                ManagerPersona.getPersona().setActividadFisica("intensa");
             }
             validInput = true;
         } catch (NumberFormatException e) {
@@ -112,10 +113,10 @@ public class ControladorGastoCalorico {
         //Posteriormente, se almacenaran todos los datos de la persona en la ManagerPersona
         try{
             if (validInput) {
-                p1.setGastoCalorico(p1);
-                calDiarias.setText(p1.caloriasToString());
-                p1.setGastoCaloricoLleno(true);
-                ManagerPersona.setPersona(p1);
+                ManagerPersona.getPersona().setGastoCalorico(ManagerPersona.getPersona());
+                calDiarias.setText(ManagerPersona.getPersona().caloriasToString());
+                ManagerPersona.getPersona().setGastoCaloricoLleno(true);
+
             }
         }catch (NumberFormatException e) {
             msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n*Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
@@ -130,6 +131,7 @@ public class ControladorGastoCalorico {
         try{
             FXMLLoader cargador1 = new FXMLLoader(getClass().getResource("/caloriesApp/fxml/MenuGanarMusculo.fxml"));
             AnchorPane contenidoGanarMusculo = cargador1.load();
+            ControladorGanarMusculo controladorMusculo = cargador1.getController();
             MenuGanarMusculo.getChildren().setAll(contenidoGanarMusculo);
 
             FXMLLoader cargador2 = new FXMLLoader(getClass().getResource("/caloriesApp/fxml/MenuPerderGrasa.fxml"));
@@ -139,12 +141,11 @@ public class ControladorGastoCalorico {
             FXMLLoader cargador3 = new FXMLLoader(getClass().getResource("/caloriesApp/fxml/InformacionResumida.fxml"));
             AnchorPane contenidoResumen = cargador3.load();
             InformacionResumida.getChildren().setAll(contenidoResumen);
+
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-
-
 
 
 

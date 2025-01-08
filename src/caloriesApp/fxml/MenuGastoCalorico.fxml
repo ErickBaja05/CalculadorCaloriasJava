@@ -90,10 +90,10 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Ganar Masa Muscular">
-              <AnchorPane fx:id="MenuGanarMusculo" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          <Tab text="Ganar Masa Muscular" >
+              <AnchorPane fx:id="MenuGanarMusculo" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
           </Tab>
-            <Tab text="Perder Grasa">
+            <Tab text="Perder Grasa " >
                 <AnchorPane fx:id="MenuPerderGrasa" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </Tab>
             <Tab text="Resumen General">
