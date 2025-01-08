@@ -1,0 +1,53 @@
+* {
+    font-family: Arial, sans-serif;
+    -fx-font-size: 14px;
+}
+
+#contenedorPrincipal{
+    -fx-padding: 20px;
+    -fx-background-image: url(https://www.semana.com/resizer/v2/YVPU3WUG5ZEXZOTQH7BMXELKKI.jpg?auth=36b1404625c2809d67dd43e69b8f12880e5fe233dba7bafdc7129fe8f3a72338&smart=true&quality=75&width=1280);
+}
+
+.titulo{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 10px;
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+.boton{
+    -fx-background-color: #0078D7;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-border-color: #005EA6;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
+.button:hover {
+    -fx-background-color: #005EA6;
+}
+.label {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.nivelesExperiencia{
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+.contenedorNivelesExperiencia .label{
+    -fx-font-weight: normal;
+}
+.contenedor{
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-background-position: center;
+    -fx-background-radius: 5;
+}
+
+
+

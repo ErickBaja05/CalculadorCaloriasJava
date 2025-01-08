@@ -1,0 +1,6 @@
+.root {
+    -fx-background-image: url("../recursos/imagenes/istockphoto-1458353392-612x612.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
