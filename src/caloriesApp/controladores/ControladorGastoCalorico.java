@@ -104,9 +104,9 @@ public class ControladorGastoCalorico {
             }
             validInput = true;
         } catch (NumberFormatException e) {
-            msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n*Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
-        } catch (NullPointerException e) {
-            msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n *Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
+            msg.setMessage("Verifique que haya rellenado todos los datos, considere:\n*Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
+        } catch (Exception e) {
+            msg.setMessage("Verifique que haya rellenado todos los datos y que estos sean coherentes.");
         }
 
         //Si la información ingresada es válida entonces se asignará el gasto cálorico y se lo mostrará al usuario
@@ -121,7 +121,7 @@ public class ControladorGastoCalorico {
         }catch (NumberFormatException e) {
             msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n*Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
         } catch (NullPointerException e) {
-            msg.setMessage("Verifique que haya rellenado todos los datos y que se encuentren en el formato correcto, considere:\n *Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
+            msg.setMessage("Verifique que haya rellenado todos los datos, que se encuentren en el formato correcto, o contenga valores adecuados, considere:\n *Utilizar el punto para decimales\n*La altura es unicamente un valor entero\n*Revisar por espacios innecesarios\n*Revisar que las casillas estén seleccionadas ");
         }
     }
 

@@ -24,25 +24,30 @@ public class Persona {
 
     public Persona(){
     }
-    public Persona(String sexo, String nombre, double peso, double altura, double edad, String actividadFisica) {
-        this.sexo = sexo;
-        this.nombre = nombre;
-        this.peso = peso;
-        this.altura = altura;
-        this.edad = edad;
-        this.gastoCalorico = 0;
-        this.nivelExperiencia = "";
-        this.caloriasGanarMusc = 0;
-        this.caloriasPerderGrasa = 0;
-        this.gramosProteinaGanarMusc = 0;
-        this.gramosGrasaGanarMusc = 0;
-        this.gramosCarbohidratosGanarMusc = 0;
-        this.gramosProteinaPerderGrasa = 0;
-        this.gramosGrasaPerderGrasa = 0;
-        this.gramosCarbohidratosPerderGrasa = 0;
-        this.gastoCaloricoLleno = false;
-        this.ganarMasaLleno = false;
-        this.perderGrasaLleno = false;
+    public Persona(String sexo, String nombre, double peso, double altura, double edad, String actividadFisica) throws Exception {
+
+        if((peso > 635 || peso < 15) || (altura < 60 || altura > 255) || (edad < 3 || edad > 120)){
+            throw new Exception("Algun valor ingresado esta fuera de rango");
+        } else {
+            this.sexo = sexo;
+            this.nombre = nombre;
+            this.peso = peso;
+            this.altura = altura;
+            this.edad = edad;
+            this.gastoCalorico = 0;
+            this.nivelExperiencia = "";
+            this.caloriasGanarMusc = 0;
+            this.caloriasPerderGrasa = 0;
+            this.gramosProteinaGanarMusc = 0;
+            this.gramosGrasaGanarMusc = 0;
+            this.gramosCarbohidratosGanarMusc = 0;
+            this.gramosProteinaPerderGrasa = 0;
+            this.gramosGrasaPerderGrasa = 0;
+            this.gramosCarbohidratosPerderGrasa = 0;
+            this.gastoCaloricoLleno = false;
+            this.ganarMasaLleno = false;
+            this.perderGrasaLleno = false;
+        }
     }
 
     public String getSexo() {
@@ -65,7 +70,10 @@ public class Persona {
         return this.peso;
     }
 
-    public void setPeso(double peso) {
+    public void setPeso(double peso) throws Exception {
+        if (peso > 635 || peso < 15) {
+            throw new Exception("Peso fuera de rango");
+        }
         this.peso = peso;
     }
 
@@ -73,16 +81,26 @@ public class Persona {
         return this.altura;
     }
 
-    public void setAltura(double altura) {
-        this.altura = altura;
+    public void setAltura(double altura) throws Exception {
+        if (altura < 60 || altura > 255) {
+            throw new Exception("Altura fuera de rango");
+        } else{
+            this.altura = altura;
+        }
     }
 
     public double getEdad() {
         return this.edad;
     }
 
-    public void setEdad(double edad) {
-        this.edad = edad;
+    public void setEdad(double edad) throws Exception {
+
+        if (edad < 3 || edad > 120) {
+            throw new Exception("Edad fuera de rango");
+        }
+        else{
+            this.edad = edad;
+        }
     }
 
     public String getActividadFisica() {
