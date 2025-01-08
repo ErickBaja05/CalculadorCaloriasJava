@@ -82,14 +82,14 @@ public class ControladorInformacionRes {
             labelActividad.setText(persona.getActividadFisica());
             labelNivelExperiencia.setText(persona.getNivelExperiencia());
             labelGasto.setText(persona.caloriasToString());
-            labelCaloriasGanarMusc.setText(String.valueOf(persona.getCaloriasGanarMusc()));
-            labelCaloriasPerderGrasa.setText(String.valueOf(persona.getCaloriasPerderGrasa()));
-            labelProteinaGanarMusc.setText(String.valueOf(persona.getGramosProteinaGanarMusc()));
-            labelGrasaGanarMusc.setText(String.valueOf(persona.getGramosGrasaGanarMusc()));
-            labelCarbohidratosGanarMusc.setText(String.valueOf(persona.getGramosCarbohidratosGanarMusc()));
-            labelProteinaPerderGrasa.setText(String.valueOf(persona.getGramosProteinaPerderGrasa()));
-            labelGrasaPerderGrasa.setText(String.valueOf(persona.getGramosGrasaPerderGrasa()));
-            labelCarbohidratosPerderGrasa.setText(String.valueOf(persona.getGramosCarbohidratosPerderGrasa()));
+            labelCaloriasGanarMusc.setText(ManagerPersona.getPersona().valorToString(persona.getCaloriasGanarMusc()));
+            labelCaloriasPerderGrasa.setText(ManagerPersona.getPersona().valorToString(persona.getCaloriasPerderGrasa()));
+            labelProteinaGanarMusc.setText(ManagerPersona.getPersona().valorToString(persona.getGramosProteinaGanarMusc()));
+            labelGrasaGanarMusc.setText(ManagerPersona.getPersona().valorToString(persona.getGramosGrasaGanarMusc()));
+            labelCarbohidratosGanarMusc.setText(ManagerPersona.getPersona().valorToString(persona.getGramosCarbohidratosGanarMusc()));
+            labelProteinaPerderGrasa.setText(ManagerPersona.getPersona().valorToString(persona.getGramosProteinaPerderGrasa()));
+            labelGrasaPerderGrasa.setText(ManagerPersona.getPersona().valorToString(persona.getGramosGrasaPerderGrasa()));
+            labelCarbohidratosPerderGrasa.setText(ManagerPersona.getPersona().valorToString(persona.getGramosCarbohidratosPerderGrasa()));
         } else {
             // Si no se obtiene la persona, establece mensajes predeterminados o de error
             Message msg = new Message();

@@ -18,8 +18,8 @@
 
             <!-- Campos para mostrar la información con Label -->
             <Label fx:id="labelNombre" layoutX="238.0" layoutY="3.0" prefHeight="27.0" prefWidth="213.0" text="0" />
-            <Label fx:id="labelEdad" layoutX="242.0" layoutY="60.0" prefHeight="27.0" prefWidth="116.0" text="0" />
-            <Label fx:id="labelPeso" layoutX="240.0" layoutY="29.0" prefHeight="27.0" prefWidth="109.0" text="0" />
+            <Label fx:id="labelEdad" layoutX="237.0" layoutY="29.0" prefHeight="27.0" prefWidth="116.0" text="0" />
+            <Label fx:id="labelPeso" layoutX="240.0" layoutY="60.0" prefHeight="27.0" prefWidth="109.0" text="0" />
             <Label fx:id="labelAltura" layoutX="242.0" layoutY="93.0" prefHeight="27.0" prefWidth="105.0" text="0" />
 
             <!-- Nuevos campos para mostrar información adicional con Label -->
@@ -28,10 +28,10 @@
             <!-- Etiquetas para los campos -->
             <Label layoutX="109.0" layoutY="6.0" text="Nombre:" />
             <Label layoutX="118.0" layoutY="32.0" text="Edad:" />
-            <Label layoutX="118.0" layoutY="63.0" text="Peso:" />
-            <Label layoutX="114.0" layoutY="96.0" text="Altura:" />
+            <Label layoutX="118.0" layoutY="63.0" text="Peso (kg):" />
+            <Label layoutX="114.0" layoutY="96.0" text="Altura (cm):" />
             <Label layoutX="119.0" layoutY="124.0" text="Sexo:" />
-            <Label layoutX="70.0" layoutY="153.0" text="Nivel de Experiencia:" />
+            <Label layoutX="76.0" layoutY="153.0" text="Nivel de Experiencia:" />
             <Label fx:id="labelNivelExperiencia" layoutX="241.0" layoutY="150.0" prefHeight="27.0" prefWidth="206.0" text="0" />
             <Label layoutX="89.0" layoutY="175.0" text="Actividad Física:" />
             <Label fx:id="labelActividad" layoutX="241.0" layoutY="172.0" prefHeight="27.0" prefWidth="191.0" text="0" />

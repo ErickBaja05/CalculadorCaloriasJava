@@ -92,6 +92,8 @@ public class ControladorGanarMusculo {
         lbGramosGrasa.setText(ManagerPersona.getPersona().valorToString(ManagerPersona.getPersona().getGramosGrasaGanarMusc()));
         lbGramosProteina.setText(ManagerPersona.getPersona().valorToString(ManagerPersona.getPersona().getGramosProteinaGanarMusc()));
 
+        ManagerPersona.getPersona().setGanarMasaLleno(true);
+
 
 
     }
