@@ -1,6 +1,35 @@
+* {
+    font-family: Arial, sans-serif;
+    -fx-font-size: 15px;
+}
+
 .root {
-    -fx-background-image: url("../recursos/imagenes/istockphoto-1458353392-612x612.jpg");
+    -fx-background-image: url("https://as01.epimg.net/deporteyvida/imagenes/2020/02/28/portada/1582915038_241822_1582915297_noticia_normal_recorte1.jpg");
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
-
+.contenedor{
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-background-position: center;
+    -fx-background-radius: 5;
+}
+.titulo{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 3px;
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+}
+.boton{
+    -fx-background-color: #0078D7;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-border-color: #005EA6;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+}
+.button:hover {
+    -fx-background-color: #005EA6;
+}

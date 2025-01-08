@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.scene.control.Label;
+import Alert.Message;
 
 public class ControladorInformacionRes {
 
@@ -72,7 +73,7 @@ public class ControladorInformacionRes {
     void actualizarLabels() {
         Persona persona = ManagerPersona.getPersona(); // Obtiene la persona desde el Manager
 
-        if (persona != null) {
+        if ((persona != null) && (persona.isGastoCaloricoLleno() && persona.isGanarMasaLleno()) && persona.isPerderGrasaLleno()) {
             labelNombre.setText(persona.getNombre());
             labelEdad.setText(String.valueOf(persona.getEdad()));
             labelPeso.setText(String.valueOf(persona.getPeso()));
@@ -91,6 +92,7 @@ public class ControladorInformacionRes {
             labelCarbohidratosPerderGrasa.setText(String.valueOf(persona.getGramosCarbohidratosPerderGrasa()));
         } else {
             // Si no se obtiene la persona, establece mensajes predeterminados o de error
+            Message msg = new Message();
             labelNombre.setText("N/A");
             labelEdad.setText("N/A");
             labelPeso.setText("N/A");
@@ -107,6 +109,8 @@ public class ControladorInformacionRes {
             labelProteinaPerderGrasa.setText("N/A");
             labelGrasaPerderGrasa.setText("N/A");
             labelCarbohidratosPerderGrasa.setText("N/A");
+            msg.setMessage("NO HA CALCULADO TODA LA INFORMACION PARA MOSTRAR EL RESUMEN");
+
         }
     }
 
@@ -115,7 +119,6 @@ public class ControladorInformacionRes {
         Persona persona = ManagerPersona.getPersona();
 
         if (persona != null) {
-            botoninfo.setText(persona.getNombre());
             actualizarLabels(); // Llamada al método para actualizar las etiquetas
         } else {
             mensajeError.setText("Error al obtener la información de la persona.");
