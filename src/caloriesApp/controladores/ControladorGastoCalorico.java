@@ -6,10 +6,7 @@ import caloriesApp.Persona;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import Alert.Message;
@@ -71,6 +68,11 @@ public class ControladorGastoCalorico {
     @FXML
     private AnchorPane InformacionResumida;
 
+
+
+
+
+    private ControladorGanarMusculo controladorMusculo;
     @FXML
     void eventoCalculo(ActionEvent event) {
         //Mensaje en caso de error
@@ -129,6 +131,7 @@ public class ControladorGastoCalorico {
         try{
             FXMLLoader cargador1 = new FXMLLoader(getClass().getResource("/caloriesApp/fxml/MenuGanarMusculo.fxml"));
             AnchorPane contenidoGanarMusculo = cargador1.load();
+            ControladorGanarMusculo controladorMusculo = cargador1.getController();
             MenuGanarMusculo.getChildren().setAll(contenidoGanarMusculo);
 
             FXMLLoader cargador2 = new FXMLLoader(getClass().getResource("/caloriesApp/fxml/MenuPerderGrasa.fxml"));
@@ -138,13 +141,11 @@ public class ControladorGastoCalorico {
             FXMLLoader cargador3 = new FXMLLoader(getClass().getResource("/caloriesApp/fxml/InformacionResumida.fxml"));
             AnchorPane contenidoResumen = cargador3.load();
             InformacionResumida.getChildren().setAll(contenidoResumen);
+
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-
-
-
 
 }
 

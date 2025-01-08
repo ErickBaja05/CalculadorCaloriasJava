@@ -1,8 +1,9 @@
 module CaloriesCounter {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.desktop;
+
     requires javafx.graphics;
+    requires jdk.unsupported.desktop;
     opens caloriesApp;
     opens caloriesApp.controladores;
 }
