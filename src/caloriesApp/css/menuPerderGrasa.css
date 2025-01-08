@@ -1,0 +1,62 @@
+/* Estilo para el fondo */
+#backPanePerderGrasa{
+    -fx-background-image: url("https://t3.ftcdn.net/jpg/07/55/75/18/360_F_755751856_SAtAXn8WDMAjKeQ3D4zZcaNw2GKY9UDf.jpg");
+    -fx-background-size: cover;
+
+}
+
+
+#datosPanePerderGrasa{
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-background-radius: 25;
+    -fx-alignment: center;
+}
+
+#datoPeso,#datoCalorias {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-background-radius: 25;
+    -fx-alignment: center;
+    -fx-border-width: 2;
+    -fx-border-color: #c2c2c2;
+    -fx-border-radius: 25;
+}
+
+#tituloPerderGrasa{
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-background-radius: 25;
+    -fx-alignment: center;
+}
+
+#resultadosPanePerderGrasa{
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-background-radius: 25;
+    -fx-alignment: center;
+}
+
+
+/* "Efectos" para el botón de cálculo */
+#caloriasButton{
+    -fx-background-color: #0078D7;
+    -fx-opacity: 0.7;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #005EA6;
+    -fx-font-size: 16px;
+}
+#caloriasButton:hover{
+    -fx-background-color: #005EA6;
+    -fx-cursor: hand;
+}
+#caloriasButton:pressed{
+    -fx-background-color: #2a51bc;
+}
+
+#statusLabel {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+#proteinaLabel, #carbohidratosLabel, #grasasLabel, #caloriasLabel {
+    -fx-font-size: 16px;
+}
