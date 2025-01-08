@@ -1,0 +1,59 @@
+/* Estilo para el fondo */
+#backPanePerderGrasa{
+    -fx-background-image: url("https://img.freepik.com/vector-premium/colorida-coleccion-frutas-verduras-al-estilo-dibujos-animados-dispuestas-manera-ludica-cuenco-que-promueve-alimentacion-saludable-ilustracion-caricaturas-personalizables-alimentos-saludables_585735-37479.jpg");
+    -fx-background-size: cover;
+
+}
+
+
+#datosPanePerderGrasa{
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-background-radius: 25;
+    -fx-alignment: center;
+}
+
+#datoPeso,#datoCalorias {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-background-radius: 25;
+    -fx-alignment: center;
+    -fx-border-width: 2;
+    -fx-border-color: #c2c2c2;
+    -fx-border-radius: 25;
+}
+
+
+
+#resultadosPanePerderGrasa{
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-background-radius: 25;
+    -fx-alignment: center;
+}
+
+
+/* "Efectos" para el botón de cálculo */
+#caloriasButton{
+    -fx-background-color: linear-gradient(to bottom, #f7734d, #f9ac96);
+    -fx-opacity: 0.7;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-width: 1px;
+    -fx-border-color: #e44c19;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5);
+    -fx-font-size: 16px;
+}
+#caloriasButton:hover{
+    -fx-background-color: linear-gradient(to bottom, #feb47b, #ff7e5f);
+    -fx-cursor: hand;
+}
+#caloriasButton:pressed{
+    -fx-background-color: #de5028;
+}
+
+#statusLabel {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+#proteinaLabel, #carbohidratosLabel, #grasasLabel, #caloriasLabel {
+    -fx-font-size: 16px;
+}
