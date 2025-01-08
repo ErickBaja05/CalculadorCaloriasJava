@@ -30,6 +30,7 @@
     -fx-border-radius: 5px;
     -fx-border-width: 1px;
 }
-.button:hover {
+.boton:hover {
     -fx-background-color: #005EA6;
+    -fx-cursor: hand;
 }

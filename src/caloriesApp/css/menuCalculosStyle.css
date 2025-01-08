@@ -46,6 +46,10 @@
     -fx-background-color: rgba(56, 103, 214);
     -fx-text-fill: white;
 }
+#calculo:hover {
+    -fx-background-color: #005EA6;
+    -fx-cursor: hand;
+}
 /* Modificaciones esteticas a la pestania ------*/
 
 /* Modificaciones esteticas a la pestania ------*/
